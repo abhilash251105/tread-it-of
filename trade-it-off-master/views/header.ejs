@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title> Trade It Off !!! </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  </head>
+
+  <style>
+    body {
+      padding-top: 70px;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm fixed-top">
+      <div class="container">
+        <a href="/" class="navbar-brand"> Trade It Off </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav ml-auto">
+            
+            <% if (loggedIn == true) { %>
+              <li class="nav-item">
+                <span class="navbar-text" style="color: white;"> Logged In as <%= login_user_id %> </span>
+              </li>
+            <% } %>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/cars">Cars</a>
+                <a class="dropdown-item" href="/bikes">Bikes</a>
+                <a class="dropdown-item" href="/furniture">Furniture</a>
+                <a class="dropdown-item" href="/electronics">Electronics</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/">All</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a href="/orders" class="nav-link"> Orders </a>
+            </li>
+            <li class="nav-item">
+              <a href="/myproducts" class="nav-link"> My Products </a>
+            </li>
+            
+            <% if (!loggedIn) { %>
+              <li class="nav-item">
+                <a href="/login" class="nav-link"> Login <i class="fas fa-user"></i> </a>
+              </li>
+            
+              <li class="nav-item">
+                  <a href="/signup" class="nav-link"> Sign Up <i class="fas fa-user-plus"></i> </a>
+              </li>
+
+            <%} else {%>
+              <li class="nav-item">
+                <a href="/signout" class="nav-link"> Sign Out <i class="fas fa-sign-out-alt"></i> </a>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
